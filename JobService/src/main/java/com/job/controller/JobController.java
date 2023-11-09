@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.job.dto.JobCompanyDTO;
+import com.job.dto.JobDTO;
 import com.job.entity.Job;
 import com.job.service.JobService;
 
@@ -29,7 +29,7 @@ public class JobController {
 	}
 
 	@GetMapping
-	public ResponseEntity<List<JobCompanyDTO>> findAll() {
+	public ResponseEntity<List<JobDTO>> findAll() {
 
 		return ResponseEntity.ok(jobService.getAll());
 
@@ -42,7 +42,7 @@ public class JobController {
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Job> getJobById(@PathVariable("id") Long id) {
+	public ResponseEntity<JobDTO> getJobById(@PathVariable("id") Long id) {
 		
 		return ResponseEntity.ok(jobService.getJobById(id));
 	}

@@ -2,16 +2,16 @@ package com.job.service;
 
 import java.util.List;
 
-import com.job.dto.JobCompanyDTO;
+import com.job.dto.JobDTO;
 import com.job.entity.Job;
 
 public interface JobService {
 
-	List<JobCompanyDTO> getAll();
+	List<JobDTO> getAll();
 
 	Job createJob(Job job);
 
-	Job getJobById(Long id);
+	JobDTO getJobById(Long id);
 
 	void getDeleteById(Long id);
 
